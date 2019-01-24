@@ -1,6 +1,7 @@
 from __future__ import absolute_import
 import unittest
 import inspect
+import django
 
 from .module import SnapshotModule, SnapshotTest
 from .diff import PrettyDiff
@@ -40,7 +41,7 @@ class UnitTestSnapshotTest(SnapshotTest):
 
 
 # Inspired by https://gist.github.com/twolfson/13f5f5784f67fd49b245
-class TestCase(unittest.TestCase):
+class TestCase(django.test.TestCase):
 
     snapshot_should_update = False
 
